@@ -4,8 +4,12 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <include file="changelog-1.0.xml" relativeToChangelogFile="true"/>
-    <include file="changelog-2.0.xml" relativeToChangelogFile="true"/>
-    <include file="changelog-3.0.xml" relativeToChangelogFile="true"/>
+    <changeSet id="createDatabase" author="Csaba79coder">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS ${DB_URL_MYSQL}
+            DEFAULT CHARACTER SET utf8
+            DEFAULT COLLATE utf8_general_ci;
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>
