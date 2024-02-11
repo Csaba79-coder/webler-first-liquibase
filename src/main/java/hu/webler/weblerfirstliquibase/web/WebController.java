@@ -1,6 +1,5 @@
 package hu.webler.weblerfirstliquibase.web;
 
-import hu.webler.weblerfirstliquibase.entity.Writer;
 import hu.webler.weblerfirstliquibase.service.WriterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

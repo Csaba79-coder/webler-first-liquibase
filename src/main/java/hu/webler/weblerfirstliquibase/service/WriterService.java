@@ -5,9 +5,7 @@ import hu.webler.weblerfirstliquibase.repository.WriterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
