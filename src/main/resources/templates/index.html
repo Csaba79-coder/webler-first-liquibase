@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Writers and Books</title>
 </head>
 <body>
-
+<h1>Writers and Books</h1>
+<table id="writerTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Writer Name</th>
+        <th>Books</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="writer : ${writers}">
+        <td th:text="${writer.id}"></td>
+        <td th:text="${writer.name}"></td>
+        <td>
+            <ul th:if="${not #lists.isEmpty(writer.books)}">
+                <li th:each="book : ${writer.books}" th:text="${book.title}"></li>
+            </ul>
+            <span th:if="${#lists.isEmpty(writer.books)}">No books available</span>
+        </td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(writers)}">
+        <td colspan="3">No writers found</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
